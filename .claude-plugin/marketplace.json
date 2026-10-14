@@ -1,0 +1,14 @@
+{
+  "name": "taxisnet",
+  "description": "Claude skills for Cyprus TAXISnet: preparing the personal income tax return (TD1 / EPR1).",
+  "owner": {
+    "name": "ittermit"
+  },
+  "plugins": [
+    {
+      "name": "taxisnet",
+      "source": "./",
+      "description": "Prepare the Cyprus personal income tax return (TD1 / EPR1) in TAXISnet through the browser, up to self-assessment."
+    }
+  ]
+}
