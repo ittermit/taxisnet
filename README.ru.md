@@ -89,6 +89,7 @@ skills/
       rules-2025.md    # правила за 2025: срок, ставки, вычеты, SDC/GHS
       taxisnet-notes.md # как устроен TAXISnet: статусы, предзаполнение, IR63, оплата
       checklist.md     # что Claude спросит у вас
+      sources.md       # источники правил и заметок
 README.md / README.ru.md
 CHANGELOG.md
 LICENSE

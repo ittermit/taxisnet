@@ -2,7 +2,7 @@
 
 From the Tax Department's 2025 guide and "common mistakes" page, TAXISnet's own FAQ and
 general TAXISnet instructions (VAT / Intrastat), plus practitioner guides — see the
-sources in the repository README. Exact labels can differ — always read the page.
+sources in `sources.md`. Exact labels can differ — always read the page.
 
 ## Access
 
@@ -52,7 +52,7 @@ agreement.
 - **Calculation of TOTALS** (only on PARTS 6,7,8): confirmation screen ("Are you sure?"),
   then computes the totals and **stores the return temporarily**. With errors it shows
   "ERRORS IN THE RETURN" and a **View errors** link (pop-up `/epr1/errorsEPR1MLookup.do`
-  listing part / table / row / field); **Continue** returns to the form with the data
+  listing part / table / row / field; read-only, changes nothing); **Continue** returns to the form with the data
   kept.
 - **SELF ASSESSMENT/CONTRIBUTIONS**: same confirmation and temporary store, then the
   calculation pages (GHS table, income tax self-assessment, SDC, IBAN). The
@@ -79,7 +79,7 @@ Calculation of TOTALS can show no errors while the data is still wrong. Typical 
 - Social Insurance / Treasury retrieval (first screen) fills pensions, self-employed
   income and contributions — only for SI/Treasury pensioners and registered
   self-employed. Requires SI number, date of birth DD/MM/YYYY (as in the SI register)
-  and sex. If retrieval fails, the date of birth is the usual culprit.
+  and sex, typed in by the user. If retrieval fails, the date of birth is the usual culprit.
 - Employer TIC and name, and insurer details are carried over from the previous year's
   return — they may be outdated; fix them from the current T.D.63.
 - Self-assessed SDC/GHS payments appear in the calculation automatically and can only

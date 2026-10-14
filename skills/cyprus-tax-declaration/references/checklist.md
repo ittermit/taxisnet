@@ -1,8 +1,10 @@
 # Checklist: what to ask the user
 
 Ask in one or two messages, in the user's language, only about what applies. Do not
-ask for passwords, card numbers or IBANs in chat. Figures the return needs (amounts,
-employer TICs) are fine to collect.
+ask in chat for passwords, card numbers, IBANs or other account numbers, Social
+Insurance numbers, dates of birth or ID / passport numbers — the user types those into
+the form themselves and Claude only checks that the fields are filled. Figures the
+return needs (amounts, employer TICs) are fine to collect.
 
 ## Before starting
 

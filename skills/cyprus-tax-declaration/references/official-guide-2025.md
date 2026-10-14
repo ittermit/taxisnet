@@ -3,7 +3,7 @@
 Summary (in our own words) of the Tax Department's "Guide for completing the
 Individual Income Tax Return 2025" (Οδηγός Συμπλήρωσης Δήλωσης Εισοδήματος Ατόμου
 2025, 24 pages, June 2026) and its "What to watch out for — common mistakes" page.
-Links are in the repository README. The guide is informational and does not replace
+Links are in `sources.md`. The guide is informational and does not replace
 the law. Greek labels are given so you can find them on the page.
 
 ## General entry rules
@@ -26,7 +26,7 @@ the law. Greek labels are given so you can find them on the page.
   Treasury (ΓΛ), or is registered as self-employed with Social Insurance. Otherwise
   **No**.
 - If Yes, the user's Social Insurance number, date of birth (DD/MM/YYYY, same as in the
-  Social Insurance register) and sex are needed; the system then fills pension (4Β1),
+  Social Insurance register) and sex are needed — the user types them in the form; the system then fills pension (4Β1),
   self-employed income, GHS and Social Insurance contributions (5Γ).
 - If "No" was chosen by mistake, double-click "ΑΝΑΚΤΗΣΗ ΣΤΟΙΧΕΙΩΝ ΥΚΑ/ΓΛ" at the top
   of the return to go back.
@@ -149,7 +149,7 @@ Only with the completion certificate from the Town Planning Department.
   5 foreign sources (17%, not withheld).
 - User's share of gross interest per bank/debtor; foreign tax (code 5); SDC and GHS
   withheld (exact); date received; for foreign interest also country, account type and
-  account number.
+  account number (the user types the account number in the form, not in chat).
 - If total income (including interest) is **not more than €12,000**, the SDC withheld on
   deposit interest is refunded automatically — only if this part is filled in.
 

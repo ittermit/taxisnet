@@ -89,6 +89,7 @@ skills/
       rules-2025.md    # tax year 2025 rules: deadline, bands, deductions, SDC/GHS
       taxisnet-notes.md # how TAXISnet behaves: statuses, prefill, IR63, payment
       checklist.md     # what Claude asks you
+      sources.md       # sources for the rules and notes
 README.md / README.ru.md
 CHANGELOG.md
 LICENSE

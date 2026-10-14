@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.1 — 2026-10-14
+
+- Personal identifiers (SI number, date of birth, account numbers, ID numbers) are typed
+  into the form by the user, never asked for in chat; Claude only checks the fields.
+- The View errors page is marked read-only.
+- New `references/sources.md` inside the skill, so the source links travel with it
+  (references no longer point to the repository README).
+- Browser skill names are examples only (`built-in-browser`, `chrome-browser`,
+  `claude-in-chrome`); a missing browser skill no longer blocks step 0.
+
 ## 1.3.0 — 2026-10-14
 
 - New step 7 in SKILL.md: check for errors after filling in — run Calculation of
