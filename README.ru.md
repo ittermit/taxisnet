@@ -1,5 +1,10 @@
 # TAXISnet — скилл Claude для налоговой декларации на Кипре
 
+[![Skill security scan](https://github.com/ittermit/taxisnet/actions/workflows/skill-scan.yml/badge.svg)](https://github.com/ittermit/taxisnet/actions/workflows/skill-scan.yml)
+[![Secret scan](https://github.com/ittermit/taxisnet/actions/workflows/secrets.yml/badge.svg)](https://github.com/ittermit/taxisnet/actions/workflows/secrets.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ittermit/taxisnet/badge)](https://scorecard.dev/viewer/?uri=github.com/ittermit/taxisnet)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 [English version](README.md)
 
 Скилл для Claude, который через браузер проводит по подаче декларации о доходах физлица
@@ -91,6 +96,8 @@ skills/
       checklist.md     # что Claude спросит у вас
       sources.md       # источники правил и заметок
 README.md / README.ru.md
+SECURITY.md
+.github/                 # security scans (skill-scanner, gitleaks, Scorecard)
 CHANGELOG.md
 LICENSE
 ```
@@ -154,6 +161,14 @@ LICENSE
 
 Во вторичных источниках бывают ошибки; где они расходились, в скилле использованы
 данные, подтверждённые несколькими источниками.
+
+
+## Безопасность
+
+См. [SECURITY.md](SECURITY.md): чего скилл никогда не делает, как сообщить о проблеме
+и какие автоматические проверки стоят за бейджами выше. Зелёный бейдж означает, что
+известных опасных шаблонов не найдено, — прочитайте `SKILL.md`, прежде чем ставить
+любой скилл.
 
 ## Лицензия
 

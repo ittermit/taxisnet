@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.0 — 2026-10-14
+
+- Security checks with README badges: Cisco AI Defense skill-scanner (fails on high /
+  critical findings, SARIF to code scanning), Gitleaks over the full history, OpenSSF
+  Scorecard; all actions pinned by commit hash, scanner installed with hashes;
+  Dependabot for actions and the scanner.
+- New SECURITY.md: how to report a problem and the skill's safety rules.
+- SKILL.md: `license: MIT` in the frontmatter; one sentence reworded that the scanner
+  flagged as a false positive.
+
 ## 1.3.1 — 2026-10-14
 
 - Personal identifiers (SI number, date of birth, account numbers, ID numbers) are typed

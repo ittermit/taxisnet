@@ -1,6 +1,6 @@
 {
   "name": "taxisnet",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Prepare the Cyprus personal income tax return (TD1 / EPR1) in TAXISnet through the browser, up to self-assessment. The user signs in and submits the return themselves.",
   "author": {
     "name": "ittermit"

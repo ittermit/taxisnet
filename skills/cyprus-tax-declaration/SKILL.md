@@ -1,6 +1,7 @@
 ---
 name: cyprus-tax-declaration
 description: Prepare the Cyprus personal income tax return (TD1 / EPR1) for the previous tax year in TAXISnet through the browser, up to the self-assessment step; the user reviews and submits it themselves.
+license: MIT
 ---
 
 # Cyprus personal income tax return (TD1 / EPR1) in TAXISnet
@@ -185,7 +186,7 @@ user's T.D.63, so it does not catch most mistakes. For each T.D.63 check, field 
 
 **d. Report and fix.** Show the user one list: each problem, where it is (part / row /
 column), the value now, the value from the document, and what it changes (e.g. "GHS due
-€0.16 disappears"). Do not tell the user the return is fine while any item is open.
+€0.16 disappears"). Say the return looks complete only once every item is resolved.
 Fix only after an explicit "yes" for the list, then re-read every changed field, run
 Calculation of TOTALS / SELF-ASSESSMENT again and repeat a–c until nothing is left.
 Things only the user can provide (a fund TIC, the right number of months, whether a

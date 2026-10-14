@@ -1,5 +1,10 @@
 # TAXISnet — Cyprus tax return skill for Claude
 
+[![Skill security scan](https://github.com/ittermit/taxisnet/actions/workflows/skill-scan.yml/badge.svg)](https://github.com/ittermit/taxisnet/actions/workflows/skill-scan.yml)
+[![Secret scan](https://github.com/ittermit/taxisnet/actions/workflows/secrets.yml/badge.svg)](https://github.com/ittermit/taxisnet/actions/workflows/secrets.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/ittermit/taxisnet/badge)](https://scorecard.dev/viewer/?uri=github.com/ittermit/taxisnet)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 [Русская версия](README.ru.md)
 
 A Claude skill that walks through the Cyprus personal income tax return
@@ -91,6 +96,8 @@ skills/
       checklist.md     # what Claude asks you
       sources.md       # sources for the rules and notes
 README.md / README.ru.md
+SECURITY.md
+.github/                 # security scans (skill-scanner, gitleaks, Scorecard)
 CHANGELOG.md
 LICENSE
 ```
@@ -152,6 +159,13 @@ TAXISnet usage and practical tips:
 
 Secondary sources can contain mistakes; where they disagreed, the skill uses the
 figures confirmed by several of them.
+
+
+## Security
+
+See [SECURITY.md](SECURITY.md): what the skill never does, how to report a problem, and
+the automated checks behind the badges above. A passing check means no known risky
+pattern was found — read `SKILL.md` before installing any skill.
 
 ## License
 

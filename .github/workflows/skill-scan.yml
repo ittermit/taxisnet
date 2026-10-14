@@ -1,0 +1,43 @@
+name: Skill security scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+permissions: read-all
+
+jobs:
+  skill-scan:
+    name: Cisco skill-scanner
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+
+      - name: Install skill-scanner
+        run: pip install --require-hashes -r .github/requirements/skill-scanner.txt
+
+      - name: Scan skills (static + behavioral, no API keys)
+        run: |
+          skill-scanner scan-all skills --recursive --use-behavioral \
+            --format summary --format sarif --output-sarif skill-scan.sarif \
+            --fail-on-severity high
+
+      - name: Upload results to code scanning
+        if: always() && hashFiles('skill-scan.sarif') != ''
+        uses: github/codeql-action/upload-sarif@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
+        with:
+          sarif_file: skill-scan.sarif
+          category: skill-scanner
