@@ -1,0 +1,5 @@
+# Direct dependency of the skill-scan workflow.
+# skill-scanner.txt is generated from this file — do not edit it by hand:
+#   pip-compile --allow-unsafe --generate-hashes --strip-extras \
+#     --output-file=skill-scanner.txt skill-scanner.in
+cisco-ai-skill-scanner==2.2.2

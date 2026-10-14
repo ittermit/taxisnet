@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.1 — 2026-10-14
+
+- Fixed the skill-scan workflow after a Dependabot update: the scanner's lock file is
+  now generated with pip-compile from `skill-scanner.in`, so Dependabot re-resolves the
+  whole dependency tree (including new transitive dependencies) instead of bumping lines
+  one by one.
+
 ## 1.4.0 — 2026-10-14
 
 - Security checks with README badges: Cisco AI Defense skill-scanner (fails on high /
