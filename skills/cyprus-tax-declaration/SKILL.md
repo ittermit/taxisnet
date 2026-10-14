@@ -55,21 +55,24 @@ relies on:
 
 ## 2. Check whether a return for this year already exists
 
-- Open:
-  https://taxisnet.mof.gov.cy/epr1/processAllEPR1DocumentList.do?dispatch=find&epr1Type=epr1m-declarations
+- Go through the menus — direct links into `/epr1/...` opened without the menu flow
+  show "Invalid flow". From the top bar: **Returns** → under the individual income tax
+  return, **View (Tax returns history)**.
 - If the interface is in Greek, switch to English (it may switch back on some screens).
 - Look for a row whose tax year = current year − 1 and note its status.
-  - **Submitted** ("ΥΠΟΒΛΗΘΗΚΕ", has an acceptance number) → tell the user the return
-    has already been filed and stop. If they want to correct it, explain the correction
-    procedure in `official-guide-2025.md` (they revert it to temporary themselves);
-    change nothing unless the user explicitly asks.
-  - **Temporary** ("Σε Προσωρινή Παραλαβή" / temporary save) → this is **not filed
-    yet**. Tell the user, open it and go to step 4.
+  - **Submitted / Accepted / Assessment Applied** ("ΥΠΟΒΛΗΘΗΚΕ", has an acceptance
+    number) → tell the user the return has already been filed and stop. If they want to
+    correct it, explain the correction procedure in `official-guide-2025.md` (they
+    revert it to temporary themselves); change nothing unless the user explicitly asks.
+  - **Temporarily Stored** ("Σε Προσωρινή Παραλαβή") → this is **not filed yet**. Tell
+    the user. Clicking the number in the history opens a **read-only** view, useful for
+    reading what is entered. To edit, go **Returns → Submit (Declaration completion)
+    → the tax year**: the stored draft opens in edit mode. Then go to step 4.
   - **No row** → step 3.
 
 ## 3. Create a new return
 
-- Open: https://taxisnet.mof.gov.cy/epr1/choosePrevTaxYearsForEPR1.do
+- **Returns → Submit (Declaration completion)**.
 - Select tax year = current year − 1. Before pressing the create button, tell the user
   you are about to create a draft for that year and wait for a "yes".
 
@@ -125,30 +128,73 @@ domicile, personal details and refund account.
 - If a field is unclear or the site shows a validation error, quote the error to the
   user and ask how to proceed.
 
-## 7. SELF-ASSESSMENT / CONTRIBUTIONS
+## 7. Check for errors, then SELF-ASSESSMENT / CONTRIBUTIONS
 
-- When all data is entered, tell the user you are moving to the calculation and, after
-  their "yes", press **[SELF-ASSESSMENT / CONTRIBUTIONS]**.
-- Read the result and give the user a short summary: total income, exempt income,
-  deductions, chargeable income, income tax, GHS, SDC, tax already withheld, amount
-  payable or refundable.
-- Sanity-check it against `rules-2025.md` (2025 bands, 1/5 cap, SDC / GHS rates). If a
-  figure looks inconsistent, show the user your arithmetic — but do not change data
-  without their agreement.
-- Point out anything the user may need to enter on the calculation pages themselves:
-  losses from previous years, foreign tax credit on foreign rent, non-dom exemption
-  years (form T.D.38). Note that any GHS balance on line 10B, even 1 cent, becomes
-  payable, and that SDC withheld amounts must match the half-year split or the return
-  cannot be submitted.
-- Ask the user to **review every entered value themselves** on the page.
+Do this check whenever data has been entered or changed, on a draft the user already
+filled in themselves, and again after any final-submission attempt (step 8).
+
+**a. Run TAXISnet's own checks.** On **PARTS 6,7,8** press **Calculation of TOTALS**
+(it asks "Are you sure?" and stores the return temporarily — tell the user and get a
+"yes" first). TAXISnet then shows the errors in the return; totals stay empty until they
+are fixed. Read every part (1–3, 4, 5, 6–8) after the calculation and collect all error
+or warning messages — use the page text, not only a screenshot.
+
+**b. Compare the entered data with the source documents.** TAXISnet does not know the
+user's T.D.63, so it does not catch most mistakes. For each T.D.63 check, field by field:
+- employer TIC and name, code, months (calendar months worked for that employer);
+- gross pay = "Emoluments" (insurable) **plus** allowances/commissions subject to SI;
+- "Remuneration and other benefits" / benefits in kind **without** SI → a **separate
+  row with code 9** for the same employer, with the GHS on non-insurable earnings in its
+  GHS column;
+- tax withheld and GHS withheld **to the cent** (GHS = insurable + non-insurable lines);
+- Part 5C: Social Insurance (code 2), approved provident / pension fund (code 1, needs
+  the fund's TIC), medical fund / private health insurance (code 4) — every amount on
+  the T.D.63 deductions side that is not GHS or tax;
+- Part 1: e-mail and address look right (changed only in Tax For All, not in the return);
+- exemption codes 3/6/12/13/14 → Part 4A2 is filled in.
+
+**c. Read the calculation.** Press **SELF-ASSESSMENT / CONTRIBUTIONS** (it also asks
+"Are you sure?" and stores the return — get a "yes"). Then check:
+- GHS table: line **10B (GHS due)** — any amount, even a few cents, usually means a
+  withheld GHS figure was typed without its cents or a code-9 row is missing;
+- 1/5 cap on Part 5C + GHS deductions, 2% cap on medical funds;
+- the income tax lines: total income, exemptions, deductions, chargeable income, tax,
+  tax withheld, tax due / refund — recompute the tax from the 2025 bands in
+  `rules-2025.md`;
+- SDC: withheld amounts must match the half-year split, or the return cannot be
+  submitted.
+
+**d. Report and fix.** Show the user one list: each problem, where it is (part / row /
+column), the value now, the value from the document, and what it changes (e.g. "GHS due
+€0.16 disappears"). Do not tell the user the return is fine while any item is open.
+Fix only after an explicit "yes" for the list, then re-read every changed field, run
+Calculation of TOTALS / SELF-ASSESSMENT again and repeat a–c until nothing is left.
+Things only the user can provide (a fund TIC, the right number of months, whether a
+benefit is taxable) are asked, never guessed.
+
+Then give the user a short summary of the result: total income, exempt income,
+deductions, chargeable income, income tax, GHS, SDC, tax already withheld, amount
+payable or refundable. Point out anything the user may need to enter on the calculation
+pages themselves: losses from previous years, foreign tax credit on foreign rent,
+non-dom exemption years (form T.D.38). Ask the user to **review every entered value
+themselves** on the page.
 
 ## 8. Finish — the user submits
 
 - **Never press Final submission / Οριστική Υποβολή / Υποβολή / the final Confirm**,
   even if the user asks. Explain that the final submission is done by them in the open
-  window, and that a temporary save does **not** count as filed.
-- Tell the user what to expect: after the final submission TAXISnet shows an
-  acceptance number and the status "ΥΠΟΒΛΗΘΗΚΕ" — check it and save the number.
+  window (the **Final submission** button is on the SELF-ASSESSMENT page), and that a
+  temporary save does **not** count as filed.
+- **After the user presses Final submission, check the result.** Ask them to tell you
+  when they have pressed it, then read the page:
+  - **Errors shown** (final submission runs the full validation, which can find more
+    than Calculation of TOTALS) → the return was **not** filed. Quote each error, map it
+    to the part / field, propose the fix, apply it after a "yes", and go through step 7
+    again; then ask the user to press Final submission again. Repeat until it goes
+    through.
+  - **Acceptance number shown** → open **Returns → View (Tax returns history)** and
+    confirm the tax year now shows Submitted / ΥΠΟΒΛΗΘΗΚΕ (not Temporarily Stored).
+- Remind the user to save the acceptance number.
 - If they spot a mistake later, they can revert the return to temporary, correct it and
   submit again **before the deadline** (steps in `official-guide-2025.md`).
 - If tax is payable: make no payments. The amount appears in the Tax Portal

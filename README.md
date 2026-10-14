@@ -52,6 +52,21 @@ using a browser, and stops at the self-assessment step so **you** can review and
 2. Zip the `cyprus-tax-declaration` folder.
 3. Upload the ZIP in the skills section of Claude's settings.
 
+### Other AI agents (Codex, Gemini, Cursor, etc.)
+
+The skill is plain Markdown, so any agent that can control a browser can follow it.
+Give your agent the link to this repository and ask it to apply the skill, for example:
+
+> Read https://github.com/ittermit/taxisnet — use
+> `skills/cyprus-tax-declaration/SKILL.md` and its `references/` folder as a skill,
+> and follow it to prepare my Cyprus tax return for last year in TAXISnet.
+
+If the agent supports skills or custom instructions, copy the
+`skills/cyprus-tax-declaration` folder into its skills directory instead. The skill
+mentions Claude's browser tools by name; other agents use their own browser tool
+in the same way. The safety rules (you sign in yourself, you press the final
+submission yourself) apply whichever agent you use.
+
 ## Usage
 
 Ask Claude something like:
@@ -83,8 +98,8 @@ LICENSE
 
 - The built-in tax rules cover **tax year 2025** only (filed in 2026 in TAXISnet).
   From tax year 2026 returns are filed in Tax For All, which this skill does not cover.
-- The form steps follow the official 2025 guide but have not yet been run against the
-  live TAXISnet form; labels may differ slightly.
+- The form steps follow the official 2025 guide and were checked against the live
+  TAXISnet form in October 2026; labels may still differ slightly.
 - TAXISnet may log you out after inactivity — Claude will ask you to sign in again.
 
 ## Disclaimer

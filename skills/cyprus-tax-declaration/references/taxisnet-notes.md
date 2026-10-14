@@ -37,14 +37,37 @@ agreement.
   acceptance date is the filing date. An electronic return is as valid as paper — do
   not also send a paper form.
 
-## Menus
+## Menus and buttons (checked on the live site, October 2026)
 
-- Returns list: "Υποβολή/Προβολή Δηλώσεων" (Submit / View returns) → "Προβολή
-  (Ιστορικό δηλώσεων)" (history) → click the return number to open it.
-- The skill's direct links:
-  - list: https://taxisnet.mof.gov.cy/epr1/processAllEPR1DocumentList.do?dispatch=find&epr1Type=epr1m-declarations
-  - new return for a previous year: https://taxisnet.mof.gov.cy/epr1/choosePrevTaxYearsForEPR1.do
-- Printing a filed return: open it from the history and use the browser's print.
+- Direct links into `/epr1/...` opened outside the menu flow show "Invalid flow" — always
+  start from the top bar **Returns** (`/basic/processDocOwner.do`).
+- **Returns → View (Tax returns history)**: list of returns with status (Temporarily
+  Stored, Submitted, Accepted, Rejected, Assessment Applied, Refund). Clicking a number
+  opens a **read-only** view of that return.
+- **Returns → Submit (Declaration completion) → tax year**: opens the return in edit
+  mode — the stored draft, if there is one.
+- Edit mode, every part: **Temporarily stored**, **Cancel**, **SIS/Treasury Information
+  Retrieval**, **Payments**, and the part buttons PARTS 1,2,3 / PART 4 / PART 5 /
+  PARTS 6,7,8 / SELF ASSESSMENT/CONTRIBUTIONS. Switching parts keeps the entered data.
+- **Calculation of TOTALS** (only on PARTS 6,7,8): confirmation screen ("Are you sure?"),
+  then computes the totals and **stores the return temporarily**. Errors in the return
+  appear after it; totals stay empty until they are fixed.
+- **SELF ASSESSMENT/CONTRIBUTIONS**: same confirmation and temporary store, then the
+  calculation pages (GHS table, income tax self-assessment, SDC, IBAN). The
+  **Final submission** button is on this page — pressed only by the user.
+- Printing a filed return: open it from the history and use **Print the return**.
+
+## Errors that TAXISnet does not catch
+
+Calculation of TOTALS can show no errors while the data is still wrong. Typical cases:
+- GHS withheld typed without its cents (e.g. `100,00` instead of `100,27`) → GHS line
+  10B shows a few cents **due**.
+- "Remuneration and other benefits" not subject to SI (e.g. employer-paid medical
+  insurance) left out — it needs its own row with code 9 and the GHS on non-insurable
+  earnings; otherwise total income and GHS withheld are understated.
+- Approved provident fund contributions from the T.D.63 not entered in Part 5C.
+- Months column not matching the employment dates on the T.D.63.
+- A typo in the correspondence e-mail in Part 1 (fixable only in Tax For All, T.D.2003).
 
 ## Prefilled data
 

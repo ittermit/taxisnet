@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.3.0 — 2026-10-14
+
+- New step 7 in SKILL.md: check for errors after filling in — run Calculation of
+  TOTALS, compare every entered figure with the T.D.63 certificates, read the GHS /
+  tax / SDC calculation (line 10B, caps), report one list of problems and fix them
+  after the user's "yes", then repeat until nothing is left.
+- Step 8: after the user presses Final submission, read the result; if TAXISnet shows
+  errors, fix them and ask the user to submit again; confirm the status in the history.
+- Navigation checked on the live site: direct `/epr1/...` links give "Invalid flow";
+  go via Returns → View (history, read-only) or Submit (edit mode). Buttons and their
+  behaviour documented in `taxisnet-notes.md`, plus errors TAXISnet does not catch.
+- README: how to use the skill with other agents (Codex, Gemini, Cursor…).
+
 ## 1.2.0 — 2026-10-14
 
 - New `official-guide-2025.md`: the Tax Department's official 2025 form guide, part by
