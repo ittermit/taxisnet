@@ -12,6 +12,8 @@
   go via Returns → View (history, read-only) or Submit (edit mode). Buttons and their
   behaviour documented in `taxisnet-notes.md`, plus errors TAXISnet does not catch.
 - README: how to use the skill with other agents (Codex, Gemini, Cursor…).
+- How TAXISnet reports errors (ERRORS IN THE RETURN → View errors pop-up → Continue);
+  code-9 rows keep the months column empty; T.D.63 euros and cents in separate columns.
 
 ## 1.2.0 — 2026-10-14
 

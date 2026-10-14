@@ -135,9 +135,13 @@ filled in themselves, and again after any final-submission attempt (step 8).
 
 **a. Run TAXISnet's own checks.** On **PARTS 6,7,8** press **Calculation of TOTALS**
 (it asks "Are you sure?" and stores the return temporarily — tell the user and get a
-"yes" first). TAXISnet then shows the errors in the return; totals stay empty until they
-are fixed. Read every part (1–3, 4, 5, 6–8) after the calculation and collect all error
-or warning messages — use the page text, not only a screenshot.
+"yes" first). If something is wrong TAXISnet shows **"ERRORS IN THE RETURN … Your
+selection can not be accepted"** with a **View errors** link. The link opens a pop-up
+(`/epr1/errorsEPR1MLookup.do`) listing each error by part, table, row and field, e.g.
+"PART 4 - TABLE A, Row 3. Field PERIOD(months) must be empty." Read that list (from the
+pop-up, or by loading that address in the same session), then press **Continue** to go
+back to the form — the entered data is kept. Fix, and run Calculation of TOTALS again
+until it returns to the form without the error page.
 
 **b. Compare the entered data with the source documents.** TAXISnet does not know the
 user's T.D.63, so it does not catch most mistakes. For each T.D.63 check, field by field:
@@ -145,8 +149,16 @@ user's T.D.63, so it does not catch most mistakes. For each T.D.63 check, field 
 - gross pay = "Emoluments" (insurable) **plus** allowances/commissions subject to SI;
 - "Remuneration and other benefits" / benefits in kind **without** SI → a **separate
   row with code 9** for the same employer, with the GHS on non-insurable earnings in its
-  GHS column;
-- tax withheld and GHS withheld **to the cent** (GHS = insurable + non-insurable lines);
+  GHS column and the **months column left empty** (TAXISnet rejects months on a code-9
+  row). With codes 12/13 the code-9 amount also gets the 50% exemption in the
+  calculation;
+- tax withheld and GHS withheld **to the cent** (GHS = insurable + non-insurable lines).
+  On many T.D.63 forms euros and cents are printed in **two separate columns**
+  ("€ , cent"), so `462   18` means €462.18, not €462; text extracted from the PDF can
+  split them apart — look at the rendered page when in doubt. The TAXISnet columns for
+  withheld tax and GHS accept cents. If the user wants to enter whole euros anyway, do
+  it their way but tell them the cents will show up as GHS / tax **due** in the
+  calculation (line 10B for GHS);
 - Part 5C: Social Insurance (code 2), approved provident / pension fund (code 1, needs
   the fund's TIC), medical fund / private health insurance (code 4) — every amount on
   the T.D.63 deductions side that is not GHS or tax;
