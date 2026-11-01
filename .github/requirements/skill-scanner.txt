@@ -496,13 +496,13 @@ charset-normalizer==3.5.2 \
     --hash=sha256:fd1fbe0f116b6e55da77aca2c6ddcddcfac2186cbf78bdebf40fc156efca389d \
     --hash=sha256:fe9753dfee015c570d73df76f899f18444d41388bffcde097deba51c4fadbb9f
     # via requests
-cisco-ai-skill-scanner==2.2.2 \
-    --hash=sha256:58be6433c8c67bbc5add4c660f33447ca0b37c1cb7ab18fdbd689b3cae38aa39 \
-    --hash=sha256:6e84eb081de78fb4ba336b525cedb091dd5c81e7715e2ad71fb1ba10584e4129 \
-    --hash=sha256:ae1b1e69beed7ba2ae7132022840b11c55bcb4d851fa0659bd4d3a591f830a8a \
-    --hash=sha256:ba6b9b5992fe51d2f041ac1d7edf0542abfe4d3b80641b9d9f7235ab7622fa67 \
-    --hash=sha256:c93db6dc5ca956e2224fa189bcb0837f0b9c3bc84d779a173856003886754f02 \
-    --hash=sha256:dfd841bb83f3d2c643cc225c151dc6cc27bb78f109ce66a7b6134cbe4c6a6053
+cisco-ai-skill-scanner==2.3.2 \
+    --hash=sha256:0222d84c9c98419623d1e2a1b56a52af4b9ca07a6e9767cb6241dc7a16f0efa5 \
+    --hash=sha256:2e85840899fe98e116d0e93da08f83c0c58843b4adf1a0ef388c6da92cf7a9a2 \
+    --hash=sha256:cd4d17147604b1623c5caec6e21d093741fb95ab9ee112741e12b60fe758a611 \
+    --hash=sha256:d019afd9c491794e4dda6cc05e629f2a0b2ce015bc65fbe91e514d5547b5e883 \
+    --hash=sha256:dcc22928431cf570285b3de874adec9f5e43b7dfa207a9b259b6f9e9489f34e4 \
+    --hash=sha256:e97e9a9cb9bd0ca71116c1b5185dffc3ad7b20c9bec25468fdffa6720f959557
     # via -r skill-scanner.in
 click==8.5.0 \
     --hash=sha256:255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360 \
